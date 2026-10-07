@@ -9,3 +9,9 @@ struct FreelancerProfile {
     bool isAvailableHire;
     uint256 hourlyRateWei;
 }
+struct CreateJobListingInput{
+    string title;
+    string jobDescription;
+    uint256 deadline;
+    uint256 fixedPriceInWei;
+}

@@ -1,0 +1,23 @@
+{
+  "default_workspace/contracts/DeworkTypes.sol": {
+    "__sources__": {
+      "default_workspace/contracts/DeworkTypes.sol": {
+        "content": "struct FreelancerProfile {\r\n    uint256 id;\r\n    string name;\r\n    address wallet;\r\n    uint8 experienceYears;\r\n    bool isAvailableHire;\r\n    uint256 hourlyRateWei;\r\n}",
+        "file": "default_workspace/contracts/DeworkTypes.sol"
+      }
+    }
+  },
+  "default_workspace/contracts/dework.sol": {
+    "./types/DeworkTypes.sol": "default_workspace/contracts/types/DeworkTypes.sol",
+    "__sources__": {
+      "default_workspace/contracts/dework.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity 0.8.34;\r\n\r\nimport {FreelancerProfile,CreateJobListingInput} from \"./types/DeworkTypes.sol\";\r\n\r\ncontract Dework {\r\n    uint256 connectFee; //state variable\r\n    address public initialOwner;\r\n\r\n    FreelancerProfile[] public freelancerProfiles;\r\n    //EmployerProfile[] public employerProfiles;\r\n\r\n    mapping(uint256=>address) public freelancerIdToAddress;\r\n\r\n    event FreelancerProfileRegistered(uint256 freelancerId,address caller);\r\n\r\n    error Dework_IncorrectJobCreationFee(uint256 expectedFee,uint256 actualFee);\r\n\r\n    constructor(address _initialOwner) {\r\n        initialOwner = _initialOwner;\r\n    }\r\n    function getNumberOfRegisteredFreelancers() public view returns(uint256) {\r\n    return freelancerProfiles.length;\r\n}\r\n\r\nfunction registerFreelancerProfile(\r\n    string calldata name,\r\n    uint8 experienceYears,\r\n    uint256 hourlyRateWei\r\n) external {\r\n    uint256 freelancerId = getNumberOfRegisteredFreelancers();\r\n\r\n    FreelancerProfile memory freelancerProfile = FreelancerProfile({ //struct\r\n        id: freelancerId,\r\n        name: name,\r\n        wallet: msg.sender,\r\n        experienceYears: experienceYears,\r\n        isAvailableHire: true,\r\n        hourlyRateWei: hourlyRateWei\r\n    });\r\n\r\n    freelancerProfiles.push(freelancerProfile);\r\n    freelancerIdToAddress[freelancerId]=msg.sender; //map[id]=address\r\n\r\n   \r\n    emit FreelancerProfileRegistered(freelancerId,msg.sender); //emit the event\r\n\r\n}\r\n\r\nfunction getFreelancerProfile() public view returns(FreelancerProfile[] memory) {\r\n    return freelancerProfiles;\r\n}\r\n\r\nfunction createJobListing(\r\n    uint256 employerId,\r\n    CreateJobListingInput calldata jobListingInput //struct\r\n)external payable{\r\n    uint256 fixedPriceForJob=jobListingInput.fixedPriceInWei; //access struct ele\r\n    if(msg.value!=fixedPriceForJob){\r\n        revert Dework_IncorrectJobCreationFee(fixedPriceForJob,msg.value);\r\n    }\r\n\r\n}\r\n}",
+        "file": "default_workspace/contracts/dework.sol"
+      },
+      "default_workspace/contracts/types/DeworkTypes.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity 0.8.34;\r\n\r\nstruct FreelancerProfile {\r\n    uint256 id;\r\n    string name;\r\n    address wallet;\r\n    uint8 experienceYears;\r\n    bool isAvailableHire;\r\n    uint256 hourlyRateWei;\r\n}\r\nstruct CreateJobListingInput{\r\n    string title;\r\n    string jobDescription;\r\n    uint256 deadline;\r\n    uint256 fixedPriceInWei;\r\n}",
+        "file": "default_workspace/contracts/types/DeworkTypes.sol"
+      }
+    }
+  }
+}

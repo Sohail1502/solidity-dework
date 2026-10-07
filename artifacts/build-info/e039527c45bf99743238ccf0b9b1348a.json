@@ -1,0 +1,370 @@
+{
+	"id": "e039527c45bf99743238ccf0b9b1348a",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.34",
+	"solcLongVersion": "0.8.34+commit.80d5c536",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"default_workspace/contracts/types/DeworkTypes.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity 0.8.34;\r\n\r\nstruct FreelancerProfile {\r\n    uint256 id;\r\n    string name;\r\n    address wallet;\r\n    uint8 experienceYears;\r\n    bool isAvailableHire;\r\n    uint256 hourlyRateWei;\r\n}\r\nstruct CreateJobListingInput{\r\n    string title;\r\n    string jobDescription;\r\n    uint256 deadline;\r\n    uint256 fixedPriceInwei;\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"sources": {
+			"default_workspace/contracts/types/DeworkTypes.sol": {
+				"ast": {
+					"absolutePath": "default_workspace/contracts/types/DeworkTypes.sol",
+					"exportedSymbols": {
+						"CreateJobListingInput": [
+							23
+						],
+						"FreelancerProfile": [
+							14
+						]
+					},
+					"id": 24,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"0.8",
+								".34"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:23:0"
+						},
+						{
+							"canonicalName": "FreelancerProfile",
+							"id": 14,
+							"members": [
+								{
+									"constant": false,
+									"id": 3,
+									"mutability": "mutable",
+									"name": "id",
+									"nameLocation": "104:2:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 14,
+									"src": "96:10:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 2,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "96:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 5,
+									"mutability": "mutable",
+									"name": "name",
+									"nameLocation": "120:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 14,
+									"src": "113:11:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 4,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "113:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 7,
+									"mutability": "mutable",
+									"name": "wallet",
+									"nameLocation": "139:6:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 14,
+									"src": "131:14:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 6,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "131:7:0",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 9,
+									"mutability": "mutable",
+									"name": "experienceYears",
+									"nameLocation": "158:15:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 14,
+									"src": "152:21:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint8",
+										"typeString": "uint8"
+									},
+									"typeName": {
+										"id": 8,
+										"name": "uint8",
+										"nodeType": "ElementaryTypeName",
+										"src": "152:5:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint8",
+											"typeString": "uint8"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 11,
+									"mutability": "mutable",
+									"name": "isAvailableHire",
+									"nameLocation": "185:15:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 14,
+									"src": "180:20:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 10,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "180:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 13,
+									"mutability": "mutable",
+									"name": "hourlyRateWei",
+									"nameLocation": "215:13:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 14,
+									"src": "207:21:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 12,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "207:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "FreelancerProfile",
+							"nameLocation": "71:17:0",
+							"nodeType": "StructDefinition",
+							"scope": 24,
+							"src": "64:168:0",
+							"visibility": "public"
+						},
+						{
+							"canonicalName": "CreateJobListingInput",
+							"id": 23,
+							"members": [
+								{
+									"constant": false,
+									"id": 16,
+									"mutability": "mutable",
+									"name": "title",
+									"nameLocation": "276:5:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 23,
+									"src": "269:12:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 15,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "269:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 18,
+									"mutability": "mutable",
+									"name": "jobDescription",
+									"nameLocation": "295:14:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 23,
+									"src": "288:21:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_string_storage_ptr",
+										"typeString": "string"
+									},
+									"typeName": {
+										"id": 17,
+										"name": "string",
+										"nodeType": "ElementaryTypeName",
+										"src": "288:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_string_storage_ptr",
+											"typeString": "string"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 20,
+									"mutability": "mutable",
+									"name": "deadline",
+									"nameLocation": "324:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 23,
+									"src": "316:16:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 19,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "316:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 22,
+									"mutability": "mutable",
+									"name": "fixedPriceInwei",
+									"nameLocation": "347:15:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 23,
+									"src": "339:23:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 21,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "339:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "CreateJobListingInput",
+							"nameLocation": "241:21:0",
+							"nodeType": "StructDefinition",
+							"scope": 24,
+							"src": "234:132:0",
+							"visibility": "public"
+						}
+					],
+					"src": "37:329:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

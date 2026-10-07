@@ -4,7 +4,7 @@ pragma solidity 0.8.34;
 import {FreelancerProfile} from "./types/DeworkTypes.sol";
 
 contract Dework {
-    uint256 connectFee;
+    uint256 connectFee; //state variable
     address public initialOwner;
 
     FreelancerProfile[] public freelancerProfiles;
